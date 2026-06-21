@@ -1,0 +1,924 @@
+
+:root {
+    --bg: #f3f6ff;
+    --panel: #ffffff;
+    --panel-border: rgba(67, 97, 238, 0.14);
+    --panel-border-hover: rgba(67, 97, 238, 0.38);
+    --text: #0f1628;
+    --muted: #5e6d8a;
+    --accent: #4361ee;
+    --accent-light: #6d8dff;
+    --accent-warm: #f4722b;
+    --accent-green: #2ec27e;
+    --shadow: 0 4px 28px rgba(67, 97, 238, 0.10), 0 1px 4px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 12px 44px rgba(67, 97, 238, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-accent: 0 8px 32px rgba(67, 97, 238, 0.32);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Manrope", sans-serif;
+    background:
+        radial-gradient(ellipse 70% 45% at 5% -5%, rgba(67, 97, 238, 0.09), transparent),
+        radial-gradient(ellipse 50% 35% at 95% 5%, rgba(46, 194, 126, 0.06), transparent),
+        radial-gradient(ellipse 40% 30% at 50% 100%, rgba(244, 114, 43, 0.05), transparent),
+        #f3f6ff;
+    color: var(--text);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', 'Manrope', sans-serif;
+}
+
+/* ── Scroll reveal ─────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(36px) scale(0.97);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Slide in from left — for section headings */
+.section-heading.reveal {
+    transform: translateX(-24px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-heading.reveal.visible {
+    transform: translateX(0);
+}
+
+/* ── Page entrance ─────────────────────────────── */
+@keyframes heroEnter {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Ambient blobs ─────────────────────────────── */
+.page-shell {
+    position: relative;
+    overflow: hidden;
+}
+
+.ambient {
+    position: fixed;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 0;
+    animation: drift 18s ease-in-out infinite;
+}
+
+.ambient-one {
+    top: -100px;
+    right: -100px;
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, rgba(67, 97, 238, 0.11), transparent 70%);
+    filter: blur(70px);
+}
+
+.ambient-two {
+    left: -120px;
+    top: 460px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(244, 114, 43, 0.08), transparent 70%);
+    filter: blur(60px);
+    animation-delay: -6s;
+}
+
+.ambient-three {
+    right: 3%;
+    bottom: 100px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(46, 194, 126, 0.08), transparent 70%);
+    filter: blur(70px);
+    animation-delay: -12s;
+}
+
+/* ── Topbar ────────────────────────────────────── */
+.topbar,
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.topbar {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 22px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: heroEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.brand {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.brand-mark {
+    font-family: 'Space Grotesk', 'Manrope', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    min-height: 58px;
+    padding: 0 22px;
+    border-radius: 14px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    box-shadow: var(--shadow-accent);
+    transition: box-shadow 220ms ease, transform 220ms ease, background 220ms ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-mark::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.24), transparent);
+    transition: left 0.5s ease;
+}
+
+.brand-mark:hover {
+    background: var(--accent-light);
+    box-shadow: 0 12px 40px rgba(67, 97, 238, 0.50);
+    transform: translateY(-1px);
+}
+
+.brand-mark:hover::after {
+    left: 160%;
+}
+
+.topnav {
+    display: flex;
+    gap: 26px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.topnav a {
+    font-size: 0.92rem;
+    transition: color 180ms ease;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.topnav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.topnav a:hover {
+    color: var(--text);
+}
+
+.topnav a:hover::after,
+.topnav a.active::after {
+    transform: scaleX(1);
+}
+
+.topnav a.active {
+    color: var(--text);
+}
+
+/* ── Main / Hero ───────────────────────────────── */
+main {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.hero {
+    min-height: 84vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 42px;
+    align-items: start;
+    padding: 44px 0 34px;
+}
+
+.hero-copy {
+    padding-top: 42px;
+    animation: heroEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.hero-visual {
+    display: grid;
+    gap: 18px;
+    align-content: center;
+    animation: heroEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    margin: 0 0 16px;
+    color: var(--accent);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: '// ';
+    color: var(--accent-warm);
+}
+
+.hero h1,
+.section-heading h2 {
+    margin: 0;
+    letter-spacing: -0.04em;
+    line-height: 1.02;
+}
+
+.hero h1 {
+    max-width: 12ch;
+    font-size: clamp(3rem, 5vw, 5.8rem);
+}
+
+/* Animated gradient text — from Prismic "CSS Text Animation" */
+.hero-title {
+    max-width: none;
+    margin-top: 2px !important;
+    font-size: clamp(2.4rem, 4.6vw, 4.4rem) !important;
+    line-height: 1.04 !important;
+    background: linear-gradient(90deg, #0f1628 0%, #4361ee 30%, #6d8dff 50%, #4361ee 70%, #0f1628 100%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 5s linear infinite;
+}
+
+.hero-typed-line {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    margin: 14px 0 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    height: 1.5em;
+    font-weight: 400;
+}
+
+.typed-cursor {
+    display: inline-block;
+    color: var(--accent-warm);
+    animation: blink 1s step-end infinite;
+    margin-left: 1px;
+}
+
+.hero-text {
+    max-width: 640px;
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.85;
+}
+
+.hero-chips,
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-chips {
+    margin-top: 28px;
+}
+
+/* Staggered entrance — inspired by "CSS Text Animation" stagger */
+.hero-chips span:nth-child(1) { animation-delay: 0.55s; }
+.hero-chips span:nth-child(2) { animation-delay: 0.65s; }
+.hero-chips span:nth-child(3) { animation-delay: 0.75s; }
+.hero-chips span:nth-child(4) { animation-delay: 0.85s; }
+
+.hero-chips span {
+    animation: chipEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-chips span,
+.tag-group span {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    background: rgba(67, 97, 238, 0.06);
+    color: var(--accent);
+    font-size: 0.74rem;
+    font-weight: 500;
+    transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.hero-chips span:hover,
+.tag-group span:hover {
+    border-color: rgba(67, 97, 238, 0.40);
+    background: rgba(67, 97, 238, 0.10);
+    box-shadow: 0 0 16px rgba(67, 97, 238, 0.16);
+    transform: translateY(-1px);
+}
+
+.hero-chips span {
+    padding: 10px 14px;
+}
+
+.hero-actions,
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+/* ── Buttons ───────────────────────────────────── */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-family: 'Space Grotesk', 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.94rem;
+    letter-spacing: 0.01em;
+    transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+/* Shine sweep — from Prismic "Keyframe Tricks" */
+.button-primary {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: var(--shadow-accent);
+}
+
+.button-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.26), transparent);
+    transition: left 0.45s ease;
+}
+
+.button-primary:hover {
+    background: var(--accent-light);
+    box-shadow: 0 14px 44px rgba(67, 97, 238, 0.48);
+}
+
+.button-primary:hover::after {
+    left: 160%;
+}
+
+.button-secondary {
+    border-color: var(--panel-border);
+    background: #ffffff;
+    color: var(--text);
+    box-shadow: var(--shadow);
+}
+
+.button-secondary:hover {
+    border-color: rgba(67, 97, 238, 0.28);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ── Hero cards ────────────────────────────────── */
+/* Magic mouse / shiny tile effect — from Prismic "Card Hover Effect" */
+.hero-card {
+    border: 1px solid var(--panel-border);
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 280ms ease, box-shadow 280ms ease, transform 280ms ease;
+}
+
+.hero-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(67, 97, 238, 0.07),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 300ms;
+    pointer-events: none;
+}
+
+.hero-card:hover {
+    border-color: rgba(67, 97, 238, 0.28);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.hero-card:hover::after {
+    opacity: 1;
+}
+
+.hero-card-main {
+    position: relative;
+    inset: auto;
+    padding: 32px;
+    animation: floatCard 7s ease-in-out infinite;
+}
+
+.mini-label {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(67, 97, 238, 0.08);
+    color: var(--accent);
+    font-size: 0.70rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.hero-card-main h2 {
+    margin: 16px 0 10px;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.hero-card-main p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+.hero-stats {
+    display: grid;
+    gap: 12px;
+}
+
+.hero-stats div {
+    padding: 18px 22px;
+    border-radius: 16px;
+    background: rgba(67, 97, 238, 0.03);
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--shadow);
+    transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.hero-stats div:hover {
+    border-color: rgba(67, 97, 238, 0.28);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.hero-stats strong {
+    display: block;
+    font-family: 'Space Grotesk', 'Manrope', sans-serif;
+    margin-bottom: 4px;
+    font-size: 1.14rem;
+    font-weight: 600;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.hero-card-floating {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    justify-self: end;
+    font-size: 0.88rem;
+    font-weight: 600;
+    animation: floatCard 6s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--accent-green);
+    box-shadow: 0 0 0 0 rgba(46, 194, 126, 0.5);
+    animation: pulse 2.2s infinite;
+    flex-shrink: 0;
+}
+
+/* ── Sections ──────────────────────────────────── */
+.section {
+    padding: 60px 0;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+    padding-left: 18px;
+    position: relative;
+}
+
+.section-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(180deg, var(--accent), var(--accent-warm));
+    border-radius: 2px;
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.section-heading.visible::before {
+    height: 100%;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 3vw, 3.2rem);
+}
+
+/* ── Grids ─────────────────────────────────────── */
+.about-grid,
+.contact-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.about-grid {
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: start;
+}
+
+.about-side {
+    display: grid;
+    gap: 18px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* ── Panels — Magic mouse shiny tile ───────────── */
+.panel {
+    border: 1px solid var(--panel-border);
+    border-radius: 20px;
+    padding: 26px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 280ms ease, box-shadow 280ms ease, transform 280ms ease;
+}
+
+.panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(67, 97, 238, 0.07),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 300ms;
+    pointer-events: none;
+}
+
+.panel:hover {
+    border-color: var(--panel-border-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+.panel:hover::after {
+    opacity: 1;
+}
+
+.panel-large {
+    padding: 32px;
+}
+
+.panel h3 {
+    margin: 0 0 14px;
+    font-size: 1.14rem;
+    font-weight: 600;
+}
+
+.panel p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.panel p + p {
+    margin-top: 14px;
+}
+
+.about-lead {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--text) !important;
+}
+
+.about-copy {
+    font-size: 1.16rem;
+    line-height: 1.9 !important;
+}
+
+.about-grid .panel h3 {
+    font-size: 1.28rem;
+}
+
+.about-grid .panel p {
+    font-size: 1.08rem;
+}
+
+.about-grid .clean-list {
+    font-size: 1.05rem;
+}
+
+.clean-list {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    line-height: 1.85;
+}
+
+.clean-list li + li {
+    margin-top: 5px;
+}
+
+.tag-group span {
+    padding: 8px 12px;
+}
+
+/* Staggered tag reveal — from Prismic "CSS Text Animation" */
+.skills-grid .panel.visible .tag-group span {
+    animation: chipEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.skills-grid .panel.visible .tag-group span:nth-child(1) { animation-delay: 0.05s; }
+.skills-grid .panel.visible .tag-group span:nth-child(2) { animation-delay: 0.10s; }
+.skills-grid .panel.visible .tag-group span:nth-child(3) { animation-delay: 0.15s; }
+.skills-grid .panel.visible .tag-group span:nth-child(4) { animation-delay: 0.20s; }
+.skills-grid .panel.visible .tag-group span:nth-child(5) { animation-delay: 0.25s; }
+.skills-grid .panel.visible .tag-group span:nth-child(6) { animation-delay: 0.30s; }
+.skills-grid .panel.visible .tag-group span:nth-child(7) { animation-delay: 0.35s; }
+.skills-grid .panel.visible .tag-group span:nth-child(8) { animation-delay: 0.40s; }
+
+/* ── Project — rotating gradient border ────────── */
+/* Inspired by Prismic "Rainbow Gradient Button" */
+.project-lead {
+    font-size: 1.06rem;
+    line-height: 1.82;
+}
+
+.project-feature-box {
+    max-width: 860px;
+    transition: transform 0.12s ease, box-shadow 280ms ease, border-color 280ms ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.project-feature-box:hover {
+    border-color: rgba(67, 97, 238, 0.40);
+    box-shadow: var(--shadow-hover), 0 0 0 1px rgba(67, 97, 238, 0.18);
+}
+
+.project-tag-group {
+    margin-top: 22px;
+}
+
+.project-role-note {
+    margin-top: 22px !important;
+}
+
+/* ── Education ─────────────────────────────────── */
+.education-panel {
+    display: grid;
+    gap: 14px;
+}
+
+/* ── Contact ───────────────────────────────────── */
+.contact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-card {
+    display: grid;
+    gap: 8px;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid var(--panel-border);
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.contact-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(67, 97, 238, 0.07),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 300ms;
+    pointer-events: none;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(67, 97, 238, 0.35);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-card:hover::after {
+    opacity: 1;
+}
+
+.contact-label {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--accent);
+    font-size: 0.70rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.contact-card strong {
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+/* ── Keyframes ─────────────────────────────────── */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes drift {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(0, -20px, 0) scale(1.04); }
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(46, 194, 126, 0.5); }
+    70% { box-shadow: 0 0 0 12px rgba(46, 194, 126, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 194, 126, 0); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% center; }
+    100% { background-position: 250% center; }
+}
+
+
+@keyframes chipEnter {
+    from { opacity: 0; transform: translateY(10px) scale(0.92); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 1080px) {
+    .hero,
+    .about-grid,
+    .skills-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: unset;
+        padding-top: 28px;
+    }
+
+    .hero-copy {
+        padding-top: 0;
+    }
+
+    .hero-visual {
+        gap: 16px;
+    }
+
+    .hero-card-main {
+        padding: 26px;
+    }
+}
+
+@media (max-width: 780px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .brand-mark {
+        min-width: 190px;
+        min-height: 54px;
+        padding: 0 18px;
+        font-size: 0.94rem;
+    }
+
+    .topnav {
+        flex-wrap: wrap;
+        gap: 12px 16px;
+    }
+
+    .hero h1 {
+        max-width: none;
+        font-size: clamp(2.7rem, 13vw, 4rem);
+        line-height: 0.98;
+    }
+
+    .hero-title {
+        font-size: clamp(2.35rem, 11vw, 3.3rem) !important;
+        line-height: 1.02 !important;
+    }
+
+    .hero-card-main {
+        padding: 22px;
+    }
+
+    .hero-card-floating {
+        justify-self: start;
+        right: 0;
+    }
+
+    .section {
+        padding: 42px 0;
+    }
+
+    .section-heading {
+        padding-left: 14px;
+    }
+
+    .panel,
+    .panel-large,
+    .contact-card {
+        border-radius: 18px;
+    }
+}
