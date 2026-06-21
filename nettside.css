@@ -44,7 +44,6 @@ h1, h2, h3 {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
 }
 
-/* ── Scroll reveal ─────────────────────────────── */
 .reveal {
     opacity: 0;
     transform: translateY(36px) scale(0.97);
@@ -57,7 +56,7 @@ h1, h2, h3 {
     transform: translateY(0) scale(1);
 }
 
-/* Slide in from left — for section headings */
+
 .section-heading.reveal {
     transform: translateX(-24px);
     transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
@@ -68,13 +67,13 @@ h1, h2, h3 {
     transform: translateX(0);
 }
 
-/* ── Page entrance ─────────────────────────────── */
+
 @keyframes heroEnter {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Ambient blobs ─────────────────────────────── */
+
 .page-shell {
     position: relative;
     overflow: hidden;
@@ -117,7 +116,7 @@ h1, h2, h3 {
     animation-delay: -12s;
 }
 
-/* ── Topbar ────────────────────────────────────── */
+
 .topbar,
 main {
     position: relative;
@@ -222,7 +221,7 @@ main {
     color: var(--text);
 }
 
-/* ── Main / Hero ───────────────────────────────── */
+
 main {
     width: min(1180px, calc(100% - 32px));
     margin: 0 auto;
@@ -277,7 +276,7 @@ main {
     font-size: clamp(3rem, 5vw, 5.8rem);
 }
 
-/* Animated gradient text — from Prismic "CSS Text Animation" */
+
 .hero-title {
     max-width: none;
     margin-top: 2px !important;
@@ -326,7 +325,7 @@ main {
     margin-top: 28px;
 }
 
-/* Staggered entrance — inspired by "CSS Text Animation" stagger */
+
 .hero-chips span:nth-child(1) { animation-delay: 0.55s; }
 .hero-chips span:nth-child(2) { animation-delay: 0.65s; }
 .hero-chips span:nth-child(3) { animation-delay: 0.75s; }
@@ -368,7 +367,7 @@ main {
     margin-top: 30px;
 }
 
-/* ── Buttons ───────────────────────────────────── */
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -390,7 +389,7 @@ main {
     transform: translateY(-2px);
 }
 
-/* Shine sweep — from Prismic "Keyframe Tricks" */
+
 .button-primary {
     background: var(--accent);
     color: #ffffff;
@@ -429,8 +428,8 @@ main {
     box-shadow: var(--shadow-hover);
 }
 
-/* ── Hero cards ────────────────────────────────── */
-/* Magic mouse / shiny tile effect — from Prismic "Card Hover Effect" */
+
+
 .hero-card {
     border: 1px solid var(--panel-border);
     border-radius: 24px;
@@ -556,7 +555,7 @@ main {
     flex-shrink: 0;
 }
 
-/* ── Sections ──────────────────────────────────── */
+
 .section {
     padding: 60px 0;
 }
@@ -587,7 +586,7 @@ main {
     font-size: clamp(2rem, 3vw, 3.2rem);
 }
 
-/* ── Grids ─────────────────────────────────────── */
+
 .about-grid,
 .contact-grid {
     display: grid;
@@ -610,7 +609,7 @@ main {
     gap: 18px;
 }
 
-/* ── Panels — Magic mouse shiny tile ───────────── */
+
 .panel {
     border: 1px solid var(--panel-border);
     border-radius: 20px;
@@ -705,7 +704,7 @@ main {
     padding: 8px 12px;
 }
 
-/* Staggered tag reveal — from Prismic "CSS Text Animation" */
+
 .skills-grid .panel.visible .tag-group span {
     animation: chipEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -719,8 +718,7 @@ main {
 .skills-grid .panel.visible .tag-group span:nth-child(7) { animation-delay: 0.35s; }
 .skills-grid .panel.visible .tag-group span:nth-child(8) { animation-delay: 0.40s; }
 
-/* ── Project — rotating gradient border ────────── */
-/* Inspired by Prismic "Rainbow Gradient Button" */
+
 .project-lead {
     font-size: 1.06rem;
     line-height: 1.82;
@@ -746,13 +744,12 @@ main {
     margin-top: 22px !important;
 }
 
-/* ── Education ─────────────────────────────────── */
+
 .education-panel {
     display: grid;
     gap: 14px;
 }
 
-/* ── Contact ───────────────────────────────────── */
 .contact-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -809,7 +806,7 @@ main {
     line-height: 1.5;
 }
 
-/* ── Keyframes ─────────────────────────────────── */
+
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
@@ -842,7 +839,6 @@ main {
     to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ── Responsive ────────────────────────────────── */
 @media (max-width: 1080px) {
     .hero,
     .about-grid,
