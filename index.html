@@ -8,376 +8,475 @@
         name="description"
         content="Portfolio website for Arin Kehreman, a computer science student focused on Android development, API integration, and polished user experiences."
     />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://api.fontshare.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@400,500,600&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap"
         rel="stylesheet"
     />
     <link rel="stylesheet" href="nettside.css" />
 </head>
 <body>
-    <div class="page-shell">
-        <div class="ambient ambient-one"></div>
-        <div class="ambient ambient-two"></div>
-        <div class="ambient ambient-three"></div>
+    <div class="preloader" aria-hidden="true">
+        <p class="preloader-name"><span class="preloader-line">Arin Kehreman</span></p>
+    </div>
 
-        <header class="topbar">
-            <a class="brand" href="#top">
-                <span class="brand-mark">Arin Kehreman</span>
-            </a>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span></div>
 
-            <nav class="topnav">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#project">Project</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+    <header class="site-head">
+        <a class="brand u-line" href="#top">Arin Kehreman</a>
+        <nav class="site-nav">
+            <a class="u-line" href="#about">About</a>
+            <a class="u-line" href="#skills">Skills</a>
+            <a class="u-line" href="#project">Projects</a>
+            <a class="u-line" href="#education">Education</a>
+            <a class="u-line" href="#contact">Contact</a>
+        </nav>
+        <p class="head-meta">Oslo, Norway</p>
+    </header>
 
-        <main id="top">
-            <section class="hero">
-                <div class="hero-copy">
-                    <p class="eyebrow">Computer Science Student · Oslo</p>
-                    <h1 class="hero-title">Hi, I'm Arin.</h1>
-                    <p class="hero-typed-line"><span class="typed-text"></span><span class="typed-cursor">▋</span></p>
-                    <p class="hero-text">
+    <main id="top">
+        <section class="hero">
+            <div class="hero-center">
+                <p class="hero-eyelet fade" data-parallax="0.18">Computer Science Student — Oslo, Norway</p>
+
+                <h1 class="hero-name reveal-lines" data-parallax="0.1">
+                    <span class="mask"><span class="line">Arin</span></span>
+                    <span class="mask mask-indent"><span class="line line-stroke">Kehreman<span class="accent-dot">.</span></span></span>
+                </h1>
+
+                <div class="hero-foot">
+                    <p class="hero-text fade" style="--d: 80ms">
                         I am Arin Kehreman, a University of Oslo computer science
                         student who enjoys programming, building practical
                         software, and developing a broad technical foundation
                         across different languages and tools.
                     </p>
 
-                    <div class="hero-chips">
-                        <span>Mobile Development</span>
-                        <span>Problem Solving</span>
-                        <span>UI / UX</span>
-                        <span>Continuous Learning</span>
-                    </div>
-
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="#project">View Project</a>
-                        <a class="button button-secondary" href="#contact">Contact Me</a>
+                    <div class="hero-actions fade" style="--d: 180ms">
+                        <a class="btn btn-fill magnetic" href="#project">
+                            <span class="btn-text"><span class="btn-label">View Projects</span><span class="btn-label btn-label-clone" aria-hidden="true">View Projects</span></span>
+                            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a class="btn btn-ghost magnetic" href="#contact">
+                            <span class="btn-text"><span class="btn-label">Contact Me</span><span class="btn-label btn-label-clone" aria-hidden="true">Contact Me</span></span>
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="hero-visual">
-                    <div class="hero-card hero-card-main">
-            
-                        <h2>Programming and System Architecture</h2>
-                        <p>
-                            I study Informatics at the University of Oslo and have
-                            completed two years focused on programming,
-                            system-oriented thinking, and building practical
-                            software projects.
+            <div class="hero-strip fade" style="--d: 260ms">
+                <span>Learning by building</span>
+                <span>Scroll &darr;</span>
+            </div>
+        </section>
+
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span class="marquee-seg">
+                    <span>Android</span><i>&mdash;</i><span class="o">Web</span><i>&mdash;</i><span>UI/UX</span><i>&mdash;</i><span class="o">Java</span><i>&mdash;</i><span>Kotlin</span><i>&mdash;</i><span class="o">Mobile Development</span><i>&mdash;</i><span>Problem Solving</span><i>&mdash;</i><span class="o">Continuous Learning</span><i>&mdash;</i>
+                </span>
+                <span class="marquee-seg">
+                    <span>Android</span><i>&mdash;</i><span class="o">Web</span><i>&mdash;</i><span>UI/UX</span><i>&mdash;</i><span class="o">Java</span><i>&mdash;</i><span>Kotlin</span><i>&mdash;</i><span class="o">Mobile Development</span><i>&mdash;</i><span>Problem Solving</span><i>&mdash;</i><span class="o">Continuous Learning</span><i>&mdash;</i>
+                </span>
+                <span class="marquee-seg">
+                    <span>Android</span><i>&mdash;</i><span class="o">Web</span><i>&mdash;</i><span>UI/UX</span><i>&mdash;</i><span class="o">Java</span><i>&mdash;</i><span>Kotlin</span><i>&mdash;</i><span class="o">Mobile Development</span><i>&mdash;</i><span>Problem Solving</span><i>&mdash;</i><span class="o">Continuous Learning</span><i>&mdash;</i>
+                </span>
+            </div>
+        </div>
+
+        <section class="section" id="about">
+            <header class="sec-head">
+                <span class="sec-num">01</span>
+                <span class="sec-label">About</span>
+            </header>
+            <h2 class="sec-title reveal-lines">
+                <span class="mask"><span class="line">What I <em>focus</em> on</span></span>
+            </h2>
+
+            <div class="about-grid">
+                <div class="about-main">
+                    <p class="about-statement fade">
+                        I enjoy building products that combine strong
+                        functionality with a clean and understandable
+                        interface.
+                    </p>
+                    <p class="fade" style="--d: 80ms">
+                        I care about details, usability, and making
+                        technical features feel approachable for real users.
+                    </p>
+                    <p class="fade" style="--d: 140ms">
+                        I study Informatics at the University of Oslo and have
+                        completed two years focused on programming,
+                        system-oriented thinking, and building practical
+                        software projects.
+                    </p>
+                </div>
+
+                <aside class="about-side">
+                    <div class="side-block fade" style="--d: 120ms">
+                        <h3 class="side-label">What I value</h3>
+                        <ul class="side-list">
+                            <li>Clear structure in code and UI</li>
+                            <li>Good visual polish without clutter</li>
+                            <li>Useful features built around real user needs</li>
+                        </ul>
+                    </div>
+
+                    <div class="side-block fade" style="--d: 220ms">
+                        <h3 class="side-label">Current direction</h3>
+                        <p class="side-text">
+                            Complete my bachelor's degree, continue building
+                            hands-on software projects,
+                            and secure an opportunity to start my career in IT.
                         </p>
                     </div>
+                </aside>
+            </div>
 
-                    <div class="hero-stats">
-                        <div>
-                            <strong>University of Oslo</strong>
-                            <span>Informatics student</span>
-                        </div>
-                        <div>
-                            <strong>2 years completed</strong>
-                            <span>Programming and systems</span>
-                        </div>
-                        <div>
-                            <strong>Current focus</strong>
-                            <span>Android, frontend, and portfolio work</span>
-                        </div>
-                    </div>
+            <ul class="facts fade" style="--d: 100ms">
+                <li>
+                    <strong>University of Oslo</strong>
+                    <span>Informatics student</span>
+                </li>
+                <li>
+                    <strong>2 years completed</strong>
+                    <span>Programming and systems</span>
+                </li>
+                <li>
+                    <strong>Current focus</strong>
+                    <span>Android, frontend, and portfolio work</span>
+                </li>
+            </ul>
+        </section>
 
-                    <div class="hero-card hero-card-floating">
-                        <span class="pulse-dot"></span>
-                        <span>Learning by building</span>
-                    </div>
+        <section class="section" id="skills">
+            <header class="sec-head">
+                <span class="sec-num">02</span>
+                <span class="sec-label">Skills</span>
+            </header>
+            <h2 class="sec-title reveal-lines">
+                <span class="mask"><span class="line">Languages, tools &amp; <em>strengths</em></span></span>
+            </h2>
+
+            <ul class="skill-list">
+                <li class="skill-row fade"><span class="skill-idx">01</span><span class="skill-name">Java</span><span class="skill-cat">Language</span></li>
+                <li class="skill-row fade" style="--d: 40ms"><span class="skill-idx">02</span><span class="skill-name">Kotlin</span><span class="skill-cat">Language</span></li>
+                <li class="skill-row fade" style="--d: 80ms"><span class="skill-idx">03</span><span class="skill-name">Python</span><span class="skill-cat">Language</span></li>
+                <li class="skill-row fade" style="--d: 120ms"><span class="skill-idx">04</span><span class="skill-name">C</span><span class="skill-cat">Language</span></li>
+                <li class="skill-row fade" style="--d: 160ms"><span class="skill-idx">05</span><span class="skill-name">JavaScript</span><span class="skill-cat">Language</span></li>
+                <li class="skill-row fade" style="--d: 200ms"><span class="skill-idx">06</span><span class="skill-name">SQL</span><span class="skill-cat">Language</span></li>
+                <li class="skill-row fade" style="--d: 240ms"><span class="skill-idx">07</span><span class="skill-name">HTML &amp; CSS</span><span class="skill-cat">Language</span></li>
+            </ul>
+
+            <div class="skill-cols">
+                <div class="skill-col fade">
+                    <h3 class="side-label">Tools</h3>
+                    <ul class="side-list">
+                        <li>Android Studio</li>
+                        <li>VS Code</li>
+                        <li>GitHub</li>
+                        <li>Gradle</li>
+                        <li>Figma</li>
+                    </ul>
                 </div>
-            </section>
-
-            <section class="section" id="about">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">About</p>
-                    <h2>What I focus on</h2>
+                <div class="skill-col fade" style="--d: 120ms">
+                    <h3 class="side-label">Strengths</h3>
+                    <ul class="side-list">
+                        <li>Clean UI</li>
+                        <li>Structured Code</li>
+                        <li>Problem Solving</li>
+                        <li>User Focus</li>
+                        <li>Teamwork</li>
+                        <li>Fast Learner</li>
+                    </ul>
                 </div>
+            </div>
+        </section>
 
-                <div class="about-grid">
-                    <article class="panel panel-large reveal" data-delay="100ms">
-                        <p>
-                            I enjoy building products that combine strong
-                            functionality with a clean and understandable
-                            interface. 
-                        </p>
-                        <p>
-                            I care about details, usability, and making
-                            technical features feel approachable for real users.
-                        </p>
-                    </article>
+        <section class="section section-dark" id="project">
+            <header class="sec-head">
+                <span class="sec-num">03</span>
+                <span class="sec-label">Featured Projects</span>
+            </header>
+            <h2 class="project-title reveal-lines">
+                <span class="mask"><span class="line">Spl<span class="accent-char">&aelig;</span>sh</span></span>
+            </h2>
 
-                    <div class="about-side">
-                        <article class="panel reveal" data-delay="200ms">
-                            <h3>What I value</h3>
-                            <ul class="clean-list">
-                                <li>Clear structure in code and UI</li>
-                                <li>Good visual polish without clutter</li>
-                                <li>Useful features built around real user needs</li>
-                            </ul>
-                        </article>
-
-                        <article class="panel reveal" data-delay="300ms">
-                            <h3>Current direction</h3>
-                            <p>
-                                Complete my bachelor's degree, continue building
-                                hands-on software projects, 
-                                and secure an opportunity to start my career in IT.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="skills">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">Skills</p>
-                    <h2>Languages, tools, and strengths</h2>
-                </div>
-
-                <div class="skills-grid">
-                    <article class="panel reveal" data-delay="100ms">
-                        <h3>Languages</h3>
-                        <div class="tag-group">
-                            <span>Java</span>
-                            <span>Kotlin</span>
-                            <span>Python</span>
-                            <span>C</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>SQL</span>
-                        </div>
-                    </article>
-
-                    <article class="panel reveal" data-delay="200ms">
-                        <h3>Tools</h3>
-                        <div class="tag-group">
-                            <span>Android Studio</span>
-                            <span>VS Code</span>
-                            <span>GitHub</span>
-                        
-                        </div>
-                    </article>
-
-                    <article class="panel reveal" data-delay="300ms">
-                        <h3>Strengths</h3>
-                        <div class="tag-group">
-                            <span>Clean UI</span>
-                            <span>Structured Code</span>
-                            <span>Problem Solving</span>
-                            <span>User Focus</span>
-                            <span>Teamwork</span>
-                            <span>Fast Learner</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="section" id="project">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">Featured Project</p>
-                    <h2>Splæsh</h2>
-                </div>
-
-                <article class="panel panel-large project-feature-box reveal" data-delay="100ms">
-                    <p class="project-lead">
-                        Splæsh is an Android app for discovering bathing places in
+            <div class="project-grid">
+                <div class="project-main">
+                    <p class="project-lead fade">
+                        Spl&aelig;sh is an Android app for discovering bathing places in
                         Norway, with weather information, warnings, sea data, and a
                         recommendation flow built into one map-based experience.
                     </p>
-
-                    <div class="tag-group project-tag-group">
-                        <span>Kotlin</span>
-                        <span>Jetpack Compose</span>
-                        <span>Mapbox</span>
-                        <span>Retrofit</span>
-                        <span>MVVM</span>
-                        <span>Coroutines</span>
-                    </div>
-
-                    <p class="project-role-note">
+                    <p class="project-role fade" style="--d: 100ms">
                         In this project I worked on design polish, warnings and UV
                         integration, parts of the weather map work, and the UX around
                         bathing score and recommendations.
                     </p>
-
-                    <div class="project-links">
-                        <a class="button button-primary" href="https://github.com/arink1305/splaesh" target="_blank" rel="noreferrer">View on GitHub</a>
+                    <div class="fade" style="--d: 180ms">
+                        <a class="btn btn-light magnetic" href="https://github.com/arink1305/splaesh" target="_blank" rel="noreferrer">
+                            <span class="btn-text"><span class="btn-label">View on GitHub</span><span class="btn-label btn-label-clone" aria-hidden="true">View on GitHub</span></span>
+                            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
                     </div>
-                </article>
-            </section>
-
-            <section class="section" id="education">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">Education</p>
-                    <h2>University of Oslo</h2>
                 </div>
 
-                <article class="panel education-panel reveal" data-delay="100ms">
-                    <div>
-                        <h3>Informatics: Programming and System Architecture</h3>
-                        <p>Completed 2 years of study</p>
-                    </div>
-                    <p>
-                        My studies have given me experience with programming,
-                        system-oriented thinking, and software architecture, while my
-                        portfolio work has helped me turn that knowledge into practical
-                        products.
+                <ul class="tech-list fade" style="--d: 120ms">
+                    <li><span class="tech-idx">01</span>Kotlin</li>
+                    <li><span class="tech-idx">02</span>Jetpack Compose</li>
+                    <li><span class="tech-idx">03</span>Mapbox</li>
+                    <li><span class="tech-idx">04</span>Retrofit</li>
+                    <li><span class="tech-idx">05</span>MVVM</li>
+                    <li><span class="tech-idx">06</span>Coroutines</li>
+                </ul>
+            </div>
+
+            <hr class="project-divider" />
+
+            <h2 class="project-title reveal-lines">
+                <span class="mask"><span class="line">Flash<span class="accent-char">G</span>enius</span></span>
+            </h2>
+
+            <div class="project-grid">
+                <div class="project-main">
+                    <p class="project-lead fade">
+                        FlashGenius is a full-stack web app that turns your notes
+                        into AI-generated study material — flashcards, quizzes,
+                        summaries, and mind maps — studied through clean,
+                        interactive interfaces.
                     </p>
-                </article>
-            </section>
-
-            <section class="section" id="contact">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">Contact</p>
-                    <h2>Let’s connect</h2>
+                    <p class="project-role fade" style="--d: 100ms">
+                        I built FlashGenius end to end: the React frontend, the
+                        FastAPI backend, a Stripe-powered freemium model, and a
+                        spaced-repetition engine that schedules each card right
+                        before you forget it.
+                    </p>
+                    <div class="project-actions fade" style="--d: 180ms">
+                        <a class="btn btn-light magnetic" href="https://flash-genius-vvo5.vercel.app" target="_blank" rel="noreferrer">
+                            <span class="btn-text"><span class="btn-label">Live Demo</span><span class="btn-label btn-label-clone" aria-hidden="true">Live Demo</span></span>
+                            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a class="btn btn-light magnetic" href="https://github.com/arink1305/FlashGenius" target="_blank" rel="noreferrer">
+                            <span class="btn-text"><span class="btn-label">View on GitHub</span><span class="btn-label btn-label-clone" aria-hidden="true">View on GitHub</span></span>
+                            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="contact-grid">
-                    <a class="contact-card reveal" data-delay="100ms" href="mailto:arink1305@gmail.com">
-                        <span class="contact-label">Email</span>
-                        <strong>arink1305@gmail.com</strong>
-                    </a>
+                <ul class="tech-list fade" style="--d: 120ms">
+                    <li><span class="tech-idx">01</span>React</li>
+                    <li><span class="tech-idx">02</span>FastAPI</li>
+                    <li><span class="tech-idx">03</span>PostgreSQL</li>
+                    <li><span class="tech-idx">04</span>Stripe</li>
+                    <li><span class="tech-idx">05</span>Groq / Llama</li>
+                    <li><span class="tech-idx">06</span>Vercel</li>
+                </ul>
+            </div>
+        </section>
 
-                    <a class="contact-card reveal" data-delay="200ms" href="https://github.com/arink1305" target="_blank" rel="noreferrer">
-                        <span class="contact-label">GitHub</span>
-                        <strong>github.com/arink1305</strong>
-                    </a>
+        <section class="section" id="education">
+            <header class="sec-head">
+                <span class="sec-num">04</span>
+                <span class="sec-label">Education</span>
+            </header>
+            <h2 class="sec-title reveal-lines">
+                <span class="mask"><span class="line">University of <em>Oslo</em></span></span>
+            </h2>
 
-                    <a class="contact-card reveal" data-delay="300ms" href="https://www.linkedin.com/in/arin-kehreman-8573403a4/" target="_blank" rel="noreferrer">
-                        <span class="contact-label">LinkedIn</span>
-                        <strong>Arin Kehreman</strong>
-                    </a>
+            <div class="edu-grid">
+                <div class="edu-what fade">
+                    <h3>Informatics: Programming and System Architecture</h3>
+                    <p class="edu-sub">Completed 2 years of study</p>
                 </div>
-            </section>
-        </main>
-    </div>
+                <p class="edu-text fade" style="--d: 120ms">
+                    My studies have given me experience with programming,
+                    system-oriented thinking, and software architecture, while my
+                    portfolio work has helped me turn that knowledge into practical
+                    products.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <header class="sec-head">
+            <span class="sec-num">05</span>
+            <span class="sec-label">Contact</span>
+        </header>
+
+        <h2 class="footer-title reveal-lines">
+            <span class="mask"><span class="line">Let's <em>talk</em><span class="accent-dot">.</span></span></span>
+        </h2>
+
+        <a class="footer-mail u-line fade" href="mailto:arink1305@gmail.com">arink1305@gmail.com</a>
+
+        <div class="footer-links fade" style="--d: 100ms">
+            <a class="u-line" href="https://github.com/arink1305" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="u-line" href="https://www.linkedin.com/in/arin-kehreman-8573403a4/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 Arin Kehreman</span>
+            <span>Oslo, Norway</span>
+            <a class="u-line" href="#top">Back to top &uarr;</a>
+        </div>
+    </footer>
 
     <script>
-        // Magic mouse — shiny tile effect on all cards (Prismic "Card Hover Effect")
         (function () {
-            var cards = document.querySelectorAll('.panel, .hero-card, .contact-card, .hero-stats div');
-            cards.forEach(function (card) {
-                card.addEventListener('mousemove', function (e) {
-                    var r = card.getBoundingClientRect();
-                    card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
-                    card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+            var docEl = document.documentElement;
+            var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            var finePointer = window.matchMedia("(pointer: fine)").matches;
+
+            // Stagger index for each masked line within a heading
+            document.querySelectorAll(".reveal-lines").forEach(function (h) {
+                h.querySelectorAll(".line").forEach(function (l, i) {
+                    l.style.setProperty("--i", i);
                 });
             });
-        })();
 
-        // Scroll reveal
-        (function () {
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.style.transitionDelay = entry.target.dataset.delay || '0ms';
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-            document.querySelectorAll('.reveal').forEach(function (el) {
-                observer.observe(el);
-            });
-        })();
+            // Preloader: curtain lifts, then reveals begin
+            setTimeout(function () {
+                docEl.classList.add("loaded");
+            }, reduced ? 0 : 1050);
 
-        // Active nav highlight
-        (function () {
-            var sections = document.querySelectorAll('section[id]');
-            var links = document.querySelectorAll('.topnav a');
-            var navObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        links.forEach(function (link) {
-                            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-                        });
-                    }
-                });
-            }, { threshold: 0.35 });
-            sections.forEach(function (s) { navObserver.observe(s); });
-        })();
-
-        // Typing effect
-        (function () {
-            var el = document.querySelector('.typed-text');
-            if (!el) return;
-            var phrases = [
-                'cs student @ uni. of oslo',
-                'building for android + web',
-                'always learning something new'
-            ];
-            var pi = 0, ci = 0, deleting = false;
-            function tick() {
-                var phrase = phrases[pi];
-                if (!deleting) {
-                    ci++;
-                    el.textContent = phrase.slice(0, ci);
-                    if (ci === phrase.length) {
-                        deleting = true;
-                        setTimeout(tick, 2400);
-                        return;
-                    }
-                    setTimeout(tick, 65);
-                } else {
-                    ci--;
-                    el.textContent = phrase.slice(0, ci);
-                    if (ci === 0) {
-                        deleting = false;
-                        pi = (pi + 1) % phrases.length;
-                    }
-                    setTimeout(tick, 38);
+            function initReveals() {
+                if (!("IntersectionObserver" in window)) {
+                    document.querySelectorAll(".reveal-lines, .fade").forEach(function (el) {
+                        el.classList.add("in");
+                    });
+                    return;
                 }
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("in");
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+                document.querySelectorAll(".reveal-lines, .fade").forEach(function (el) {
+                    io.observe(el);
+                });
             }
-            setTimeout(tick, 1000);
-        })();
+            setTimeout(initReveals, reduced ? 0 : 1250);
 
-        // Project card smooth tilt
-        (function () {
-            var card = document.querySelector('.project-feature-box');
-            if (!card) return;
-            var tx = 0, ty = 0, cx = 0, cy = 0, raf;
-            function lerp(a, b, t) { return a + (b - a) * t; }
-            card.addEventListener('mousemove', function (e) {
-                var r = card.getBoundingClientRect();
-                tx = (e.clientX - r.left) / r.width - 0.5;
-                ty = (e.clientY - r.top) / r.height - 0.5;
-            });
-            card.addEventListener('mouseenter', function () {
-                cancelAnimationFrame(raf);
-                function animate() {
-                    cx = lerp(cx, tx, 0.1);
-                    cy = lerp(cy, ty, 0.1);
-                    card.style.transform =
-                        'perspective(900px) rotateY(' + (cx * 8) + 'deg) rotateX(' + (-cy * 8) + 'deg) translateY(-5px)';
-                    raf = requestAnimationFrame(animate);
+            // Active nav highlight
+            (function () {
+                var targets = document.querySelectorAll("main section[id], footer[id]");
+                var links = document.querySelectorAll(".site-nav a");
+                if (!("IntersectionObserver" in window)) return;
+                var navObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            links.forEach(function (link) {
+                                link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+                            });
+                        }
+                    });
+                }, { threshold: 0.35 });
+                targets.forEach(function (t) { navObserver.observe(t); });
+            })();
+
+            // Marquee: constant drift, subtly reacting to scroll velocity
+            (function () {
+                var track = document.querySelector(".marquee-track");
+                if (!track || reduced) return;
+                var segW = 0;
+                function measure() {
+                    segW = track.children[0].getBoundingClientRect().width;
                 }
-                animate();
-            });
-            card.addEventListener('mouseleave', function () {
-                cancelAnimationFrame(raf);
-                tx = 0; ty = 0;
-                function animateBack() {
-                    cx = lerp(cx, 0, 0.12);
-                    cy = lerp(cy, 0, 0.12);
-                    card.style.transform =
-                        'perspective(900px) rotateY(' + (cx * 8) + 'deg) rotateX(' + (-cy * 8) + 'deg) translateY(0)';
-                    if (Math.abs(cx) > 0.01 || Math.abs(cy) > 0.01) {
-                        raf = requestAnimationFrame(animateBack);
-                    } else {
-                        card.style.transform = '';
+                measure();
+                if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+                window.addEventListener("resize", measure);
+
+                var x = 0, lastY = window.scrollY, vel = 0;
+                (function loop() {
+                    var y = window.scrollY;
+                    vel += (y - lastY) * 0.06;
+                    lastY = y;
+                    vel *= 0.92;
+                    var v = Math.max(-6, Math.min(6, vel));
+                    x -= 0.6 + v;
+                    if (segW > 0) {
+                        if (x <= -segW) x += segW;
+                        if (x > 0) x -= segW;
                     }
-                }
-                animateBack();
-            });
+                    track.style.transform = "translate3d(" + x + "px,0,0)";
+                    requestAnimationFrame(loop);
+                })();
+            })();
+
+            // Custom cursor
+            (function () {
+                var cursor = document.querySelector(".cursor");
+                if (!cursor || !finePointer || reduced) return;
+                var mx = 0, my = 0, cx = 0, cy = 0, seen = false;
+                document.addEventListener("mousemove", function (e) {
+                    mx = e.clientX;
+                    my = e.clientY;
+                    if (!seen) {
+                        cx = mx; cy = my;
+                        seen = true;
+                        cursor.classList.add("on");
+                    }
+                });
+                document.addEventListener("mouseover", function (e) {
+                    cursor.classList.toggle("grow", !!e.target.closest("a, button, .skill-row"));
+                });
+                (function loop() {
+                    cx += (mx - cx) * 0.18;
+                    cy += (my - cy) * 0.18;
+                    cursor.style.transform = "translate3d(" + cx + "px," + cy + "px,0)";
+                    requestAnimationFrame(loop);
+                })();
+            })();
+
+            // Magnetic buttons
+            (function () {
+                if (!finePointer || reduced) return;
+                document.querySelectorAll(".magnetic").forEach(function (el) {
+                    el.addEventListener("mousemove", function (e) {
+                        var r = el.getBoundingClientRect();
+                        var x = (e.clientX - r.left - r.width / 2) * 0.32;
+                        var y = (e.clientY - r.top - r.height / 2) * 0.32;
+                        el.style.transform = "translate(" + x + "px," + y + "px)";
+                    });
+                    el.addEventListener("mouseleave", function () {
+                        el.style.transform = "";
+                    });
+                });
+            })();
+
+            // Hero parallax
+            (function () {
+                if (reduced) return;
+                var els = [].slice.call(document.querySelectorAll("[data-parallax]"));
+                if (!els.length) return;
+                var ticking = false;
+                window.addEventListener("scroll", function () {
+                    if (ticking) return;
+                    ticking = true;
+                    requestAnimationFrame(function () {
+                        var y = window.scrollY;
+                        if (y < window.innerHeight * 1.3) {
+                            els.forEach(function (el) {
+                                el.style.transform = "translate3d(0," + y * parseFloat(el.dataset.parallax) + "px,0)";
+                            });
+                        }
+                        ticking = false;
+                    });
+                }, { passive: true });
+            })();
         })();
     </script>
 </body>
