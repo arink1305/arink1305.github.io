@@ -206,9 +206,22 @@
                 <span class="sec-num">03</span>
                 <span class="sec-label">Featured Projects</span>
             </header>
-            <h2 class="project-title reveal-lines">
-                <span class="mask"><span class="line">Spl<span class="accent-char">&aelig;</span>sh</span></span>
-            </h2>
+            <div class="project-head">
+                <h2 class="project-title reveal-lines">
+                    <span class="mask"><span class="line">Spl<span class="accent-char">&aelig;</span>sh</span></span>
+                </h2>
+
+                <figure class="project-mark shot">
+                    <img
+                        src="bilder/splaesh/logo.png"
+                        alt="Spl&aelig;sh app icon"
+                        width="535"
+                        height="560"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </figure>
+            </div>
 
             <div class="project-grid">
                 <div class="project-main">
@@ -238,6 +251,50 @@
                     <li><span class="tech-idx">05</span>MVVM</li>
                     <li><span class="tech-idx">06</span>Coroutines</li>
                 </ul>
+            </div>
+
+            <div class="shots shots-app">
+                <figure class="shot shot-phone">
+                    <div class="shot-frame shot-frame-phone">
+                        <img
+                            src="bilder/splaesh/kart.png"
+                            alt="Spl&aelig;sh map view showing bathing places around Oslo with a weather card"
+                            width="624"
+                            height="1400"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </div>
+                    <figcaption>Map, weather and sea data</figcaption>
+                </figure>
+
+                <figure class="shot shot-phone" style="--d: 130ms">
+                    <div class="shot-frame shot-frame-phone">
+                        <img
+                            src="bilder/splaesh/anbefalinger.png"
+                            alt="Spl&aelig;sh recommendations screen listing nearby beaches with a bathing score"
+                            width="628"
+                            height="1400"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </div>
+                    <figcaption>Recommendations by bathing score</figcaption>
+                </figure>
+
+                <figure class="shot shot-phone" style="--d: 260ms">
+                    <div class="shot-frame shot-frame-phone">
+                        <img
+                            src="bilder/splaesh/instillinger-mork.png"
+                            alt="Spl&aelig;sh settings screen in dark mode with score profile options"
+                            width="624"
+                            height="1400"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </div>
+                    <figcaption>Settings &mdash; dark mode</figcaption>
+                </figure>
             </div>
 
             <hr class="project-divider" />
@@ -280,6 +337,55 @@
                     <li><span class="tech-idx">05</span>Groq / Llama</li>
                     <li><span class="tech-idx">06</span>Vercel</li>
                 </ul>
+            </div>
+
+            <div class="shots shots-web">
+                <figure class="shot shot-wide">
+                    <div class="shot-frame shot-frame-browser">
+                        <span class="shot-bar" aria-hidden="true"></span>
+                        <img
+                            src="bilder/flashgenius/landing.png"
+                            alt="FlashGenius landing page with the headline and a sample flashcard"
+                            width="1600"
+                            height="2046"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </div>
+                    <figcaption>Landing page</figcaption>
+                </figure>
+
+                <div class="shots-pair">
+                    <figure class="shot" style="--d: 120ms">
+                        <div class="shot-frame shot-frame-browser">
+                            <span class="shot-bar" aria-hidden="true"></span>
+                            <img
+                                src="bilder/flashgenius/dashboard-dark.png"
+                                alt="FlashGenius dashboard in dark mode with sets, folders and a streak counter"
+                                width="1600"
+                                height="1125"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                        <figcaption>Dashboard &mdash; dark mode</figcaption>
+                    </figure>
+
+                    <figure class="shot" style="--d: 220ms">
+                        <div class="shot-frame shot-frame-browser">
+                            <span class="shot-bar" aria-hidden="true"></span>
+                            <img
+                                src="bilder/flashgenius/study-flipped.png"
+                                alt="FlashGenius study mode with a flashcard flipped to show the answer"
+                                width="1600"
+                                height="1175"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                        <figcaption>Study mode</figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
 
@@ -351,7 +457,7 @@
 
             function initReveals() {
                 if (!("IntersectionObserver" in window)) {
-                    document.querySelectorAll(".reveal-lines, .fade").forEach(function (el) {
+                    document.querySelectorAll(".reveal-lines, .fade, .shot").forEach(function (el) {
                         el.classList.add("in");
                     });
                     return;
@@ -364,7 +470,7 @@
                         }
                     });
                 }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
-                document.querySelectorAll(".reveal-lines, .fade").forEach(function (el) {
+                document.querySelectorAll(".reveal-lines, .fade, .shot").forEach(function (el) {
                     io.observe(el);
                 });
             }
